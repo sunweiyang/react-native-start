@@ -1,0 +1,23 @@
+#!/bin/bash
+# create-app
+# Run this script to generate a boilerplate app in this directory.
+# Use via the following command:
+# ./create-app APP_NAME
+
+APP_NAME=$1
+
+echo "Initializing React Native app..."
+react-native init $APP_NAME --version react-native@0.54.2
+
+echo "Installing the following node packages via yarn..."
+# Generate list of packages to install from packages_to_install.txt
+ALL_PACKAGES=""
+while read package || [[ -n $package ]]; do
+  ALL_PACKAGES="$ALL_PACKAGES $package"
+  echo "$package"
+done <packages_to_install.txt
+cd $APP_NAME
+yarn add $ALL_PACKAGES -E
+
+echo "Link relevant packages to React Native..."
+react-native link
