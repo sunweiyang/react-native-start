@@ -26,7 +26,7 @@ react-native link
 
 echo "Initializing git project and creating initial commit..."
 git init
-git add * .gitignore
+git add * .gitignore .babelrc .buckconfig .flowconfig .gitattributes .watchmanconfig
 git commit -m "Create initial commit based on react-native-start"
 
 echo "$APP_NAME mobile app project created at: ../$APP_NAME"
