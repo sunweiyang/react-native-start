@@ -24,4 +24,9 @@ yarn add $ALL_PACKAGES -E
 echo "Link relevant packages to React Native..."
 react-native link
 
+echo "Initializing git project and creating initial commit..."
+git init
+git add * .gitignore
+git commit -m "Create initial commit based on react-native-start"
+
 echo "$APP_NAME mobile app project created at: ../$APP_NAME"
