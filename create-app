@@ -6,18 +6,22 @@
 
 APP_NAME=$1
 
-echo "Initializing React Native app..."
-react-native init $APP_NAME --version react-native@0.57.2
-
-echo "Installing the following node packages via yarn..."
 # Generate list of packages to install from packages_to_install.txt
 ALL_PACKAGES=""
 while read package || [[ -n $package ]]; do
   ALL_PACKAGES="$ALL_PACKAGES $package"
   echo "$package"
 done <packages_to_install.txt
+
+cd ..
+echo "Initializing React Native app..."
+react-native init $APP_NAME --version react-native@0.57.2
+
+echo "Installing the following node packages via yarn..."
 cd $APP_NAME
 yarn add $ALL_PACKAGES -E
 
 echo "Link relevant packages to React Native..."
 react-native link
+
+echo "$APP_NAME mobile app project created at: ../$APP_NAME"
