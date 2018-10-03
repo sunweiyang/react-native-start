@@ -7,7 +7,7 @@
 APP_NAME=$1
 
 echo "Initializing React Native app..."
-react-native init $APP_NAME --version react-native@0.55.2
+react-native init $APP_NAME --version react-native@0.57.2
 
 echo "Installing the following node packages via yarn..."
 # Generate list of packages to install from packages_to_install.txt
