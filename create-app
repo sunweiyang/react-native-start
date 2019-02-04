@@ -15,7 +15,7 @@ done <packages_to_install.txt
 
 cd ..
 echo "Initializing React Native app..."
-react-native init $APP_NAME --version react-native@0.57.2
+react-native init $APP_NAME --version react-native@0.58.0
 
 echo "Installing the following node packages via yarn..."
 cd $APP_NAME
